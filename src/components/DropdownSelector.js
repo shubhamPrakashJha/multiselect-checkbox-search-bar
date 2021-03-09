@@ -59,28 +59,17 @@ function DropdownSelector({list, onSubmit}) {
   }
 
   const handleSelectAll = () => {
-    if(list.length === selected.length){
+    if(listArr.length === selected.length){
       setSelected([])
     }else{
-      setSelected([...list])
+      setSelected([...listArr])
     }
   }
-
-  // const handleFocus = () => {
-  //   setOpenFilter(openFilter => !openFilter);
-  //   console.log('')
-  // }
-
-  // useEffect(() => {
-  //   setListArr(listArr => listArr.filter(list => list.toLowerCase().inc))
-  // }, [searchTerm])
-
 
   let filteredList = listArr.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
   return (
     <form
       onFocus={() => setOpenFilter(true)}
-      // onBlur={handleBlur}
       className={styles.filterWrapper}
       onSubmit={e => handleSubmit(e)}
     >
@@ -99,7 +88,7 @@ function DropdownSelector({list, onSubmit}) {
         <div className="selectBox" onClick={() => setOpenFilter(true)}>
           <select className={styles.select}>
             <option>
-              Colors {selected.length > 0 && `- ${selected.join(', ')}`}
+              Colors {selected.length > 0 && `- ${selected.join(', ').slice(0,30)}...`}
             </option>
           </select>
         </div>
