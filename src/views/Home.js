@@ -12,7 +12,8 @@ function Home() {
   }
   return (
     <div className={styles.home}>
-      <DropdownSelector list={components} onSubmit={onSubmit}/>
+      <DropdownSelector list={colors} name={"Colors"} onSubmit={onSubmit}/>
+      <DropdownSelector list={components} name={"Components"} onSubmit={onSubmit}/>
     </div>
   )
 }
