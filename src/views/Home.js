@@ -8,6 +8,10 @@ import styles from './home.module.css'
 
 function Home() {
   const onSubmit = (list) => {
+    /***
+     * TODO: Some action with the selected data
+     * input: selected data retured from DropdownSelector after clicking submit button
+     */
     console.log(list)
   }
   return (

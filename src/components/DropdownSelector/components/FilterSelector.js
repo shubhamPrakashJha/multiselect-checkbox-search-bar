@@ -8,8 +8,9 @@ export const FilterSelector = ({ selected, list, handleSelectAll, filteredList, 
       checked={selected.length === list.length}
       onChange={handleSelectAll} />
     <div className={styles.scrollable}>
-      {filteredList.map((item) => (
+      {filteredList.map((item, index) => (
         <Options
+          key={`${item}${index}`}
           checked={selected.indexOf(item) !== -1}
           onChange={() => handleFilterToggle(item)}
         >
