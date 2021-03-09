@@ -1,0 +1,164 @@
+.filterWrapper{
+  /* background: #fff; */
+}
+
+.checkboxSelector{
+  margin-top: 3px;
+  background: #fff;
+}
+
+.option{
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 9px;
+  min-height: 21px;
+}
+
+.select{
+  background: #fff;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.selectedItem{
+  font-weight: bolder;
+}
+
+.checkbox{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxLabel{
+  padding-left: 4px;
+}
+
+.checkboxActiveLabel{
+  padding-left: 4px;
+  font-weight: bolder;
+  color: #6f79c6;
+}
+
+.buttonsWrapper{
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button{
+  border: none;
+    background: transparent;
+    padding: 4px 15px;
+    font-weight: 800;
+}
+.activeButton{
+  border: none;
+    background: transparent;
+    padding: 4px 15px;
+    font-weight: 800;
+    color: #56b494;
+}
+
+
+/* Custom Checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + span {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  width: 12px;
+  height: 12px;
+  margin: -1px 0px 0 0;
+  vertical-align: middle;
+  background: white left top no-repeat;
+  border: 1px solid #414149;
+  cursor: pointer;
+  border-radius: 3px;
+}
+input[type="checkbox"]:checked + span {
+  background: #414149 -19px top no-repeat;
+}
+
+input[type="checkbox"] + span {
+  margin-right: 4px;
+}
+
+.option:nth-child(1) input[type="checkbox"]:checked + span:after {
+  content: '–';
+  position: absolute;
+  top: 0.3rem;
+  left: .17rem;
+  font-size: 0.75em;
+  color: #fff;
+  line-height: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+
+.scrollable input[type="checkbox"]:checked + span:after {
+  content: '✓' !important;
+  position: absolute;
+  top: 0.3rem !important;
+  left: .1rem !important;
+  font-size: 0.75em;
+  color: #fff;
+  line-height: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+
+/* Scrollable Section */
+.scrollable {
+  max-height: 159px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    border-left: 1px solid #f2f2f2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f100;
+    border-radius: 8px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #88888829;
+    border-radius: 8px;
+    padding: 0 8px;
+    width: 4px
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Custom Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Some browsers will not display the caret when using calc, so we put the fallback first */ 
+  background: url("./assets/down.svg") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+  background: url("./assets/down.svg") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+}
+/*For IE*/
+select::-ms-expand { display: none; }
