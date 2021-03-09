@@ -2,6 +2,8 @@ import React from 'react'
 import DropdownSelector from '../components/DropdownSelector';
 import {colors,components} from '../mock'
 
+import styles from './home.module.css'
+
 
 
 function Home() {
@@ -9,7 +11,7 @@ function Home() {
     console.log(list)
   }
   return (
-    <div style={{width: '300px'}}>
+    <div className={styles.home}>
       <DropdownSelector list={components} onSubmit={onSubmit}/>
     </div>
   )

@@ -1,5 +1,7 @@
 .filterWrapper{
   /* background: #fff; */
+  padding: 1rem;
+  width: 300px;
 }
 
 .checkboxSelector{
