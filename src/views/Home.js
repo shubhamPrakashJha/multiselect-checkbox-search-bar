@@ -1,6 +1,6 @@
 import React from 'react'
 import DropdownSelector from '../components/DropdownSelector';
-import {colors} from '../mock'
+import {colors,components} from '../mock'
 
 
 
@@ -10,7 +10,7 @@ function Home() {
   }
   return (
     <div style={{width: '300px'}}>
-      <DropdownSelector list={colors} onSubmit={onSubmit}/>
+      <DropdownSelector list={components} onSubmit={onSubmit}/>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './dropdown.module.css'
 
 const Checkbox = props => (
@@ -18,14 +18,15 @@ const Options = ({children, ...props}) => (
 
 
 function DropdownSelector({list, onSubmit}) {
-  // const [listArr, setListArr] = useState([]);
+  const [listArr, setListArr] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [openFilter, setOpenFilter] = useState(false);
   const [selected, setSelected] = useState([])
 
-  // useEffect(() => {
-  //   setListArr(list)
-  // }, [list])
+  useEffect(() => {
+    let newList = list.map(item => typeof(item) === "object" ? item.title: item)
+    setListArr(newList)
+  }, [list])
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value)
@@ -75,7 +76,7 @@ function DropdownSelector({list, onSubmit}) {
   // }, [searchTerm])
 
 
-  let filteredList = list.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+  let filteredList = listArr.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
   return (
     <form
       onFocus={() => setOpenFilter(true)}
